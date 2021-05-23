@@ -67,20 +67,39 @@ body {
     background-color: #800000;
     transform: scale(1.1); }
 
-.main__list {
-  width: 100%;
+.container {
+  display: flex;
+  flex-direction: row; }
+
+.section__fav {
+  width: 30%;
+  max-width: 300px;
   height: auto;
-  padding: 30px 0 120px 30px; }
+  min-height: 100vh;
+  margin: 30px 0 80px 30px;
+  background-color: white;
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  font-weight: 700;
+  font-size: 24px;
+  border-radius: 10px; }
+
+.main__list {
+  width: 70%;
+  height: auto;
+  padding: 30px 0 80px 30px; }
 
 .js-list-item {
-  list-style: none; }
+  list-style: none;
+  display: inline-block; }
 
 .js-list-div {
   height: 380px;
-  width: 300px;
+  width: 240px;
   border: solid 2px #892232;
   border-radius: 10px;
   margin-bottom: 10px;
+  margin-right: 10px;
   text-align: center; }
 
 .js-showName {
@@ -106,8 +125,9 @@ body {
   background-color: #892232; }
 
 .header__title {
-  font-size: 32px;
-  padding-left: 30px; }
+  font-size: 40px;
+  padding-left: 30px;
+  font-weight: 700; }
 
 .header__logo {
   width: 140px;
