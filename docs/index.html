@@ -12,15 +12,22 @@
   <body>
     
     <header class="page__header">
-      
+      <img src="./assets/images/pop-corn-logo.jpeg" alt="pop-corn-logo" class="header__logo">
+      <h1 class="header__title">Buscador de series</h1>
     </header>
 
     <main class="page__main">
-      
+      <form action="#" class="form js-form">
+        <input class="form__input js-search" type="text" name="search" id="search" placeholder="Ej: Juego de tronos">
+        <input type="button" value="Search" class="form__button">
+      </form>
+      <ul class="main__list js-main-list">
+        Lista de series
+      </ul>
     </main>
 
     <footer class="page__footer">
-      <small>
+      <small class="footer__copy">
         &copy; Todos los derechos reservados
       </small>
     </footer>
