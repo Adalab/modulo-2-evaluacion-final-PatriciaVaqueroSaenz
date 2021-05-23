@@ -34,4 +34,3 @@ function handleClik(){
 }
 
 searchButton.addEventListener('click',handleClik);
-//# sourceMappingURL=main.js.map
