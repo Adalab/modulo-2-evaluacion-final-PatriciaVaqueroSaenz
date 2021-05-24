@@ -31,6 +31,7 @@ function resetLS(){
   localStorage.clear();
   favoriteList.innerHTML='';
   resultList.innerHTML ='';
+  location.reload(); //recargar la página después de borrar
 }
 
 const reset = document.querySelector('.section__fav-reset');
