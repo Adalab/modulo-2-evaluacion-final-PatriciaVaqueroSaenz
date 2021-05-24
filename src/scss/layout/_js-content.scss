@@ -36,12 +36,26 @@
 .list-fav{
     list-style: none;
     padding-top: 20px;
+    
+}
+.div-fav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .title-fav{
     font-size: 18px;
 }
 .img-fav{
+    
     width: 90px;
     height: 135px;
     padding-top: 10px;
+    
+}
+.fa-times-circle{
+    padding-top: 10px;
+    color: gray;
+    cursor: pointer;
 }

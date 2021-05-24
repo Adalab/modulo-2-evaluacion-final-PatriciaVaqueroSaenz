@@ -18,14 +18,20 @@ const defaultImage = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV
 
 
 function conectToApi(){
+
   const inputValue = document.querySelector('.js-searchInput').value;
+
 
   fetch(`//api.tvmaze.com/search/shows?q=${inputValue}`)
     .then((response) => response.json())
     .then((data) => {
       globalData = data;
+      //almaceno en ls globaldata
+      localStorage.setItem('globalData', JSON.stringify(data));
       printShows(globalData);
     });
+
+  printFavoriteList(globalData);
 
 }
 
@@ -77,3 +83,22 @@ function handleClik(){
 }
 
 searchButton.addEventListener('click',handleClik);
+
+
+// SI TIENE DATOS ALMACENADOS EN LS LOS COGEMOS Y PINTAMOS EN LISTA SERIES FAVORITAS
+if(localStorage.getItem('favorites') !== null) {
+
+  const savedFav = JSON.parse( localStorage.getItem('favorites'));
+  const savedGD = JSON.parse( localStorage.getItem('globalData'));
+
+  for (const fav of savedFav) {
+    const filteredLS = savedGD.find( data => data.show.id === fav);
+    if (filteredLS.show.image === null){
+      favoriteList.innerHTML += `<li data-id="${filteredLS.show.id}" class="list-fav"><div class="div-fav"><h1 class="title-fav">${filteredLS.show.name}</h1><img class="img-fav" src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"/><i data-id="${filteredLS.show.id}" class="fas fa-times-circle remove-fav"></i></div></li>`;
+    }else{
+      favoriteList.innerHTML += `<li data-id="${filteredLS.show.id}" class="list-fav"><div class="div-fav"><h1 class="title-fav">${filteredLS.show.name}</h1><img class="img-fav" src="${filteredLS.show.image.medium}"/><i data-id="${filteredLS.show.id}" class="fas fa-times-circle remove-fav"></i></div></li>`;
+    }
+  }
+
+  addListenerToIcon();
+}

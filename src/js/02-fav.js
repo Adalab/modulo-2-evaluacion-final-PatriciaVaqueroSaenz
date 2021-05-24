@@ -31,22 +31,25 @@ function handleClickCard(event) {
   else {
     favorites = favorites.filter( favoriteId => favoriteId !== parseInt(showId) );
   }
+
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+
   printFavoriteList(event);
   renderFilteredShows();
 }
 
 function printFavoriteList(event){
+  if (event !== undefined){
+    const whereIAddedTheEvent = event.currentTarget;
+    const showId = whereIAddedTheEvent.dataset.id;
+    const text = event.srcElement.innerText;
+    const imageFav = event.srcElement.nextSibling.currentSrc;
 
-  const whereIAddedTheEvent = event.currentTarget;
-  const showId = whereIAddedTheEvent.dataset.id;
-  const text = event.srcElement.innerText;
-  const imageFav = event.srcElement.nextSibling.currentSrc;
+    favoriteList.innerHTML += `<li data-id="${showId}" class="list-fav"><div class="div-fav"><h1 class="title-fav">${text}</h1><img class="img-fav" src="${imageFav}"/><i data-id="${showId}" class="fas fa-times-circle remove-fav"></i></div></li>`;
 
-  for (const favorite of favorites){
-
-    favoriteList.innerHTML += `<li data-id="${showId}" class="list-fav"><div><h1 class="title-fav">${text}</h1><img class="img-fav" src="${imageFav}"/></div></li>`;
-
+    console.log(favoriteList);
   }
+
 }
 
 function renderFilteredShows() {
