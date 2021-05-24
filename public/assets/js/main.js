@@ -186,18 +186,23 @@ function addListenerToIcon(){
 
 function handleClickRemoveFav(event){
 
-  console.log(event.target); //me coge el icono con id=favorito seleccionado
-  const savedFav = JSON.parse( localStorage.getItem('favorites'));
-  const savedGD = JSON.parse( localStorage.getItem('globalData'));
-  console.log(savedFav); //recupero los datos de ls almacenados en favorites
-  console.log(savedGD);//recupero los datos de ls almacenados en globalData
+  console.log(event.target); //icono con id=favorito seleccionado
+  console.log(event.target.dataset.id);//id del icono sleeccionado
+  let nameEvent = event.target.parentNode.firstChild.innerText;
+  let imageEvent= event.target.parentNode.firstChild.nextSibling.currentSrc;
 
-  //eliminar de ls de favoritos el elemento clickado, pintar de nuevo para que quite los eliminados
-  // for (const fav of savedFav) {
-  //   const filteredLS = savedGD.find( data => data.show.id === fav);
-  //   console.log(filteredLS);
-  // }
+
+  let savedFav = JSON.parse( localStorage.getItem('favorites'));//recupero los datos de ls almacenados en favorites
+  let savedGD = JSON.parse( localStorage.getItem('globalData'));//recupero los datos de ls almacenados en globalData
+
+  savedFav = savedFav.filter((favorito)=>
+    favorito !== parseInt(event.target.dataset.id)
+  );//me elimina de savedFav el favorito en el que hemos clickado en la x
+  localStorage.setItem('favorites', JSON.stringify(savedFav));//lo borro del LS
+
+  //SI SE RECARGA LA PÁGINA SE ACTUALIZA EL LISTADO DE FAVORITOS SINO NO
 }
+
 
 
 function resetLS(){
