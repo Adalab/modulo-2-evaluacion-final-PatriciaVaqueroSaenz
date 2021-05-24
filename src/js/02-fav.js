@@ -37,16 +37,14 @@ function handleClickCard(event) {
 
 function printFavoriteList(event){
 
-  //si la serie está clickada---es favorita---se pinta en la ul
   const whereIAddedTheEvent = event.currentTarget;
   const showId = whereIAddedTheEvent.dataset.id;
-  console.log(whereIAddedTheEvent);
-  console.log(showId);
+  const text = event.srcElement.innerText;
+  const imageFav = event.srcElement.nextSibling.currentSrc;
 
-  favoriteList.innerHTML ='';
   for (const favorite of favorites){
 
-    favoriteList.innerHTML += `<li data-id="${showId}" class="list-fav">${favorite}</li>`;
+    favoriteList.innerHTML += `<li data-id="${showId}" class="list-fav"><div><h1 class="title-fav">${text}</h1><img class="img-fav" src="${imageFav}"/></div></li>`;
 
   }
 }

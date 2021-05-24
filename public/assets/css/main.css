@@ -125,6 +125,14 @@ body {
   list-style: none;
   padding-top: 20px; }
 
+.title-fav {
+  font-size: 18px; }
+
+.img-fav {
+  width: 90px;
+  height: 135px;
+  padding-top: 10px; }
+
 .page__header {
   display: flex;
   flex-direction: row;
