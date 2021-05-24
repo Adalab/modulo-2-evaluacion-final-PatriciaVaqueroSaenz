@@ -44,6 +44,7 @@ function printShows(globalData){
     // Buscar si la paleta que se está pintando está en favoritos
     const isPresent = favorites.find( favoriteId => favoriteId === showId);
 
+
     // Si el id está en favoritos, se renderiza el li con la clase favorite
     let classFavorite = '';
     if( isPresent === undefined ) {
@@ -62,7 +63,7 @@ function printShows(globalData){
     }else{
       showsImageMedium = globalData[i].show.image.medium;
 
-      resultList.innerHTML += `<li data-id="${showId}" class="js-list-item ${classFavorite}"><div class="js-list-div"><h2 "class=js-showName">${showsName}</h2><img class="js-image" src="${showsImageMedium}"/></div></li>`;
+      resultList.innerHTML += `<li data-id="${showId}" class="js-list-item ${classFavorite}"><div class="js-list-div"><h2 class="js-showName">${showsName}</h2><img class="js-image" src="${showsImageMedium}"/></div></li>`;
 
     }
 

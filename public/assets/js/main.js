@@ -44,6 +44,7 @@ function printShows(globalData){
     // Buscar si la paleta que se está pintando está en favoritos
     const isPresent = favorites.find( favoriteId => favoriteId === showId);
 
+
     // Si el id está en favoritos, se renderiza el li con la clase favorite
     let classFavorite = '';
     if( isPresent === undefined ) {
@@ -62,7 +63,7 @@ function printShows(globalData){
     }else{
       showsImageMedium = globalData[i].show.image.medium;
 
-      resultList.innerHTML += `<li data-id="${showId}" class="js-list-item ${classFavorite}"><div class="js-list-div"><h2 "class=js-showName">${showsName}</h2><img class="js-image" src="${showsImageMedium}"/></div></li>`;
+      resultList.innerHTML += `<li data-id="${showId}" class="js-list-item ${classFavorite}"><div class="js-list-div"><h2 class="js-showName">${showsName}</h2><img class="js-image" src="${showsImageMedium}"/></div></li>`;
 
     }
 
@@ -81,7 +82,8 @@ searchButton.addEventListener('click',handleClik);
 /* eslint-disable no-undef */
 /* eslint-disable strict */
 
-
+const inputShow = document.querySelector('.js-searchInput');
+let filteredShows = [];
 
 function addListenerToCards(){
   const allCards = document.querySelectorAll('.js-list-item');
@@ -98,17 +100,31 @@ function handleClickCard(event) {
   //OBTENER ID ASOCIADO A LA SERIE CLICKADA
   const showId = whereIAddedTheEvent.dataset.id;
 
-  const isPresent = favorites.find( favoriteId => favoriteId === showId );
+  // Buscar si la paleta clickada está en favoritos
+  const isPresent = favorites.find( favoriteId => favoriteId === parseInt(showId));
 
   if( isPresent === undefined ) {
-    // El ID de la paleta en la que ha hecho click no está en el array de favoritos
-    favorites.push( showId );
+    // El ID de la serie en la que ha hecho click no está en el array de favoritos
+    favorites.push( parseInt(showId));
   }
   else {
-    favorites = favorites.filter( favoriteId => favoriteId !== showId );
+    favorites = favorites.filter( favoriteId => favoriteId !== parseInt(showId) );
   }
 
-  console.log(favorites);
+  renderFilteredShows();
+}
+
+function renderFilteredShows() {
+
+  // Coger el valor actual
+  const searchText = inputShow.value.toLowerCase();
+
+  // Filtrar las series que inluyen el campo de búsqueda
+  for (const data of globalData){
+    filteredShows = globalData.filter((data) => data.show.name.toLowerCase().includes(searchText) );
+  }
+  // pintar series
+  printShows(filteredShows);
 
 }
 
