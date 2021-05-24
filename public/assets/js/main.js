@@ -152,6 +152,8 @@ function printFavoriteList(event){
     favoriteList.innerHTML += `<li data-id="${showId}" class="list-fav"><div class="div-fav"><h1 class="title-fav">${text}</h1><img class="img-fav" src="${imageFav}"/><i data-id="${showId}" class="fas fa-times-circle remove-fav"></i></div></li>`;
 
     console.log(favoriteList);
+  }else{
+    favoriteList.innerHTML='';
   }
 
 }
@@ -170,6 +172,7 @@ function renderFilteredShows() {
 
 }
 
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable strict */
@@ -195,4 +198,15 @@ function handleClickRemoveFav(event){
   //   console.log(filteredLS);
   // }
 }
+
+
+function resetLS(){
+
+  localStorage.clear();
+  favoriteList.innerHTML='';
+  resultList.innerHTML ='';
+}
+
+const reset = document.querySelector('.section__fav-reset');
+reset.addEventListener('click', resetLS);
 //# sourceMappingURL=main.js.map

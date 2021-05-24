@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable strict */
@@ -23,3 +24,14 @@ function handleClickRemoveFav(event){
   //   console.log(filteredLS);
   // }
 }
+
+
+function resetLS(){
+
+  localStorage.clear();
+  favoriteList.innerHTML='';
+  resultList.innerHTML ='';
+}
+
+const reset = document.querySelector('.section__fav-reset');
+reset.addEventListener('click', resetLS);

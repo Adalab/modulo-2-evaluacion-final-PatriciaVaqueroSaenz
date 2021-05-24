@@ -48,6 +48,8 @@ function printFavoriteList(event){
     favoriteList.innerHTML += `<li data-id="${showId}" class="list-fav"><div class="div-fav"><h1 class="title-fav">${text}</h1><img class="img-fav" src="${imageFav}"/><i data-id="${showId}" class="fas fa-times-circle remove-fav"></i></div></li>`;
 
     console.log(favoriteList);
+  }else{
+    favoriteList.innerHTML='';
   }
 
 }
