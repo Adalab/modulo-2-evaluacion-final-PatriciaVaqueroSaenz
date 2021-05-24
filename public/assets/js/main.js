@@ -20,7 +20,7 @@ const defaultImage = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV
 function conectToApi(){
   const inputValue = document.querySelector('.js-searchInput').value;
 
-  fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
+  fetch(`//api.tvmaze.com/search/shows?q=${inputValue}`)
     .then((response) => response.json())
     .then((data) => {
       globalData = data;
