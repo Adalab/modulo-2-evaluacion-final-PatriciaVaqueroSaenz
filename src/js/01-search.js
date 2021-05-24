@@ -7,6 +7,7 @@ console.log('>> Ready :)');
 
 const searchButton = document.querySelector('.js-searchButton');
 const resultList = document.querySelector('.js-main-list');
+const favoriteList = document.querySelector('.main__list-favorite');
 let showsName;
 let showsImage;
 let showsImageMedium;

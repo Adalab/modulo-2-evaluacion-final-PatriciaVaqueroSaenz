@@ -121,6 +121,10 @@ body {
   margin-bottom: 10px;
   margin-right: 10px; }
 
+.list-fav {
+  list-style: none;
+  padding-top: 20px; }
+
 .page__header {
   display: flex;
   flex-direction: row;

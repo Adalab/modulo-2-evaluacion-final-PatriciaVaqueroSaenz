@@ -31,8 +31,24 @@ function handleClickCard(event) {
   else {
     favorites = favorites.filter( favoriteId => favoriteId !== parseInt(showId) );
   }
-
+  printFavoriteList(event);
   renderFilteredShows();
+}
+
+function printFavoriteList(event){
+
+  //si la serie está clickada---es favorita---se pinta en la ul
+  const whereIAddedTheEvent = event.currentTarget;
+  const showId = whereIAddedTheEvent.dataset.id;
+  console.log(whereIAddedTheEvent);
+  console.log(showId);
+
+  favoriteList.innerHTML ='';
+  for (const favorite of favorites){
+
+    favoriteList.innerHTML += `<li data-id="${showId}" class="list-fav">${favorite}</li>`;
+
+  }
 }
 
 function renderFilteredShows() {
