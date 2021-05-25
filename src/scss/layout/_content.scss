@@ -1,75 +1,74 @@
-body{
-    height: 100vh;
-    background-color: #be525b;
+body {
+  height: 100vh;
+  background-color: #be525b;
 }
-.page__main{
-    width: 100%;
-    height: auto;
-    background-color: #be525b;
-}
-
-.form{
-    width: 100%;  
-    height: auto;
-    padding: 30px 0 0 30px;
+.page__main {
+  width: 100%;
+  height: auto;
+  background-color: #be525b;
 }
 
-.form__input{
-    height: 30px;
-    border-radius: 10px;
-    border: none;
-    padding-left: 10px;
+.form {
+  width: 100%;
+  height: auto;
+  padding: 30px 0 0 30px;
 }
 
-.form__button{
-    margin-left: 10px;
-    padding: 0 10px;
-    background-color: #892232;
-    border-radius: 10px;
-    border: none;
-    height: 30px;
-    cursor: pointer;
-    &:hover{
-        background-color: #800000; 
-        transform: scale(1.1); 
-    }
+.form__input {
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
+.form__button {
+  margin-left: 10px;
+  padding: 0 10px;
+  background-color: #892232;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: #800000;
+    transform: scale(1.1);
+  }
 }
 
-.section__fav{
-    width: 30%;
-    min-width: 220px;
-    max-width: 300px;
-    height: auto;
-    min-height: 100vh;
-    margin: 30px 0 80px 30px;
-    background-color: white;
-    text-align: center;
-    padding: 20px 10px 20px 10px;
-    font-weight: 700;
-    font-size: 24px;
-    border-radius: 10px;
+.container {
+  display: flex;
+  flex-direction: row;
 }
 
-.main__list{
-    width: 70%;
-    height: auto;
-    padding: 30px 0 80px 30px;
-
+.section__fav {
+  width: 30%;
+  min-width: 220px;
+  max-width: 300px;
+  height: auto;
+  min-height: 100vh;
+  margin: 30px 0 80px 30px;
+  background-color: white;
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  font-weight: 700;
+  font-size: 24px;
+  border-radius: 10px;
 }
-.section__fav-reset{
-    margin-top: 30px;
-    background-color: #892232;
-    border-radius: 10px;
-    border: none;
-    height: 30px;
-    cursor: pointer;
-    &:hover{
-        background-color: #800000; 
-        transform: scale(1.1); 
-    }
+
+.main__list {
+  width: 70%;
+  height: auto;
+  padding: 30px 0 80px 30px;
+}
+.section__fav-reset {
+  margin-top: 30px;
+  background-color: #892232;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: #800000;
+    transform: scale(1.1);
+  }
 }
