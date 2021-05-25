@@ -1,20 +1,18 @@
-
 function addListenerToIcon() {
-  const allIcons = document.querySelectorAll('.remove-fav');
+  const allIcons = document.querySelectorAll(".remove-fav");
   for (const icon of allIcons) {
     //al pulsar en los iconos evaluamos con la función si están o no en favoritos y repintamos
-    icon.addEventListener('click', handleClickCard);
+    icon.addEventListener("click", handleClickCard);
   }
 }
 
 function resetLS() {
   //vaciamos el array de favoritos
-  favorites=[]; 
+  favorites = [];
   //limpiamos el ls
-  localStorage.clear(); 
+  localStorage.clear();
   //recargar la página después de borrar
-  location.reload(); 
+  location.reload();
 }
 
-
-reset.addEventListener('click', resetLS);
+reset.addEventListener("click", resetLS);
